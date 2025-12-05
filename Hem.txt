@@ -1,0 +1,101 @@
+if game.PlaceId == 121864768012064 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/idkwhatmyusn/Testing/refs/heads/main/DEOBF_3.lua"))()
+elseif game.PlaceId == 1234567890 then
+    loadstring(game:HttpGet("https://rockhub.net/game2.lua"))()
+elseif game.PlaceId == 1234567890 then
+    loadstring(game:HttpGet("https://rockhub.net/game3.lua"))()
+elseif game.PlaceId == 1234567890 then
+    loadstring(game:HttpGet("https://rockhub.net/game4.lua"))()
+
+else
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local UserInputService = game:GetService("UserInputService")
+local InfinityJumpConnection = nil
+local LocalPlayer = game.Players.LocalPlayer
+
+
+WindUI:Popup({
+    Title = "RockHub - Unsupported",
+    Icon = "rbxassetid://116236936447443",
+    Content = "Sorry This Game Currently Unsupported",
+    Buttons = {
+        {
+            Title = "Continue",
+            Icon = "arrow-right",
+            Callback = function() end,
+            Variant = "Primary",
+        }
+    }
+})
+
+local Window = WindUI:CreateWindow({
+    Title = "RockHub - Unsupported",
+    Icon = "rbxassetid://116236936447443", -- lucide icon. optional
+    Author = "Unsupported Version",
+    Folder = "RockHub",
+    
+    Size = UDim2.fromOffset(600, 360),
+    MinSize = Vector2.new(560, 250),
+    MaxSize = Vector2.new(950, 760),
+    Transparent = true,
+    Theme = "Rose",
+    Resizable = true,
+    SideBarWidth = 190,
+    BackgroundImageTransparency = 0.42,
+    HideSearchBar = false,
+    ScrollBarEnabled = true, -- optional
+})
+
+-- =================================================================
+-- 1. TAB ABOUT
+-- =================================================================
+do
+    local about = Window:Tab({
+        Title = "About",
+        Icon = "info", -- optional
+        Locked = false,
+    })
+
+    about:Section({
+        Title = "Join Discord Server RockHub",
+        TextSize = 20,
+    })
+
+    about:Paragraph({
+        Title = "RockHub Community",
+        Desc = "Join Our Community Discord Server to get the latest updates, support, and connect with other users!",
+        Image = "rbxassetid://122210708834535",
+        ImageSize = 24,
+        Buttons = {
+            {
+                Title = "Copy Link",
+                Icon = "link",
+                Callback = function()
+                    setclipboard("https://discord.gg/5cttYec5BK")
+                    print("Discord link copied!")
+                    WindUI:Notify({
+                        Title = "Link Disalin!",
+                        Content = "Link Discord RockHub berhasil disalin.",
+                        Duration = 3,
+                        Icon = "copy",
+                    })
+                end,
+            }
+        }
+    })
+end
+
+Window:EditOpenButton({
+    Title = "RockHub - Fish It",
+    Icon = "rbxassetid://116236936447443",
+    CornerRadius = UDim.new(0,30),
+    StrokeThickness = 1.5,
+    Color = ColorSequence.new(
+        Color3.fromHex("FF0F7B"),
+        Color3.fromHex("F89B29")
+    ),
+    OnlyMobile = false,
+    Enabled = true,
+    Draggable = true,
+})
+end
